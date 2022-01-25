@@ -6,11 +6,12 @@ find_package(ament_cmake_ros REQUIRED)
 find_package(orocos_kdl REQUIRED)
 find_package(urdf REQUIRED)
 find_package(urdfdom_headers REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 # Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
-endif()
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(${EIGEN3_INCLUDE_DIR})
 
 add_library(
   ${PROJECT_NAME}
